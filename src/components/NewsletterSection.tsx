@@ -16,30 +16,32 @@ export const NewsletterSection = () => {
   return (
     <HeadlessNewsletter>
       {(logic) => (
-        <section className="bg-muted/30 py-16 border-y">
-          <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <section className="bg-foreground text-background py-24">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             {logic.success ? (
-              <div className="space-y-4">
+              <div className="text-center space-y-6">
                 <div className="flex justify-center">
-                  <div className="bg-primary/10 rounded-full p-3">
-                    <Mail className="h-8 w-8 text-primary" />
+                  <div className="bg-accent/20 rounded-full p-4">
+                    <Mail className="h-12 w-12 text-accent" />
                   </div>
                 </div>
-                <h3 className="text-2xl font-bold text-foreground">
-                  Thanks for subscribing!
+                <h3 className="text-4xl font-black tracking-tighter">
+                  WELCOME TO THE CLUB
                 </h3>
-                <p className="text-muted-foreground">
-                  You'll receive our best offers and promotions soon.
+                <p className="text-background/70 font-light text-lg">
+                  You're now on the list for exclusive drops and early access.
                 </p>
               </div>
             ) : (
-              <div className="space-y-6">
-                <div className="space-y-2">
-                  <h3 className="text-2xl font-bold text-foreground">
-                    Want promotional emails?
+              <div className="text-center space-y-8">
+                <div className="space-y-4">
+                  <h3 className="text-5xl md:text-6xl font-black tracking-tighter leading-none">
+                    STAY IN
+                    <br />
+                    THE LOOP
                   </h3>
-                  <p className="text-lg text-muted-foreground">
-                    Subscribe to our newsletter and get exclusive offers
+                  <p className="text-lg text-background/70 font-light max-w-xl mx-auto">
+                    Get early access to new products, exclusive offers, and design inspiration.
                   </p>
                 </div>
                 
@@ -48,23 +50,23 @@ export const NewsletterSection = () => {
                     e.preventDefault();
                     logic.handleSubscribe();
                   }}
-                  className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
+                  className="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto"
                 >
                   <Input 
                     type="email"
-                    placeholder="your@email.com"
+                    placeholder="Enter your email"
                     value={logic.email}
                     onChange={(e) => logic.setEmail(e.target.value)}
                     disabled={logic.isSubmitting}
-                    className="flex-1"
+                    className="flex-1 bg-background/10 border-background/20 text-background placeholder:text-background/50 focus:border-accent rounded-full px-6 h-12"
                     required
                   />
                   <Button 
                     type="submit"
                     disabled={logic.isSubmitting}
-                    className="sm:w-auto"
+                    className="sm:w-auto rounded-full px-8 h-12 bg-accent text-foreground hover:bg-accent/90 font-bold"
                   >
-                    {logic.isSubmitting ? 'Subscribing...' : 'Subscribe'}
+                    {logic.isSubmitting ? 'JOINING...' : 'JOIN'}
                   </Button>
                 </form>
                 
