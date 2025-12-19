@@ -148,6 +148,7 @@ export const ProductCardUI = ({ product }: ProductCardUIProps) => {
                 {logic.inStock ? 'ADD' : 'SOLD OUT'}
               </Button>
             </div>
+            </div>
           </CardContent>
         </Card>
       )}
